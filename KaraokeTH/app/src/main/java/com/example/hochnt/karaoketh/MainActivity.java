@@ -60,7 +60,16 @@ public class MainActivity extends AppCompatActivity {
         adapterMusicYeuThich.notifyDataSetChanged();
     }
 
+    ArrayList<Music> dsBaiHattmp = new ArrayList<Music>();
     private void xyLyHienThiBaiHatGoc() {
+        dsBaiHattmp.addAll(dsBaiHat);
+        dsBaiHat.clear();
+        for(Music baihat: dsBaiHattmp)//su dung chung dia chi vung nho
+        {
+                dsBaiHat.add(baihat);
+        }
+        adapterMusic.notifyDataSetChanged();
+        dsBaiHattmp.clear();
     }
 
     private void addControl() {
